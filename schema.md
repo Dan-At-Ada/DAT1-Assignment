@@ -110,29 +110,7 @@ erDiagram
         int performed_by FK
     }
 
-    LOCATIONS ||--o{ STAFF : employs
-    LOCATIONS ||--o{ EQUIPMENT : houses
-    LOCATIONS ||--o{ CLASSES : hosts
-    LOCATIONS ||--o{ ATTENDANCE : records
-
-    MEMBERS ||--o{ MEMBERSHIPS : has
-    MEMBERS ||--o{ ATTENDANCE : checks_in
-    MEMBERS ||--o{ CLASS_ATTENDANCE : attends
-    MEMBERS ||--o{ PAYMENTS : makes
-    MEMBERS ||--o{ PERSONAL_TRAINING_SESSIONS : books
-    MEMBERS ||--o{ MEMBER_HEALTH_METRICS : tracks
-
-    STAFF ||--o{ CLASS_SCHEDULE : instructs
-    STAFF ||--o{ PERSONAL_TRAINING_SESSIONS : conducts
-    STAFF ||--o{ EQUIPMENT_MAINTENANCE_LOG : performs
-
-    EQUIPMENT ||--o{ EQUIPMENT_MAINTENANCE_LOG : undergoes
-
-    CLASSES ||--o{ CLASS_SCHEDULE : scheduled_as
-
-    CLASS_SCHEDULE ||--o{ CLASS_ATTENDANCE : has_attendees
-
-    MEMBERSHIPS ||--o{ PAYMENTS : generates
+    
 ```
 
 ## Interpreting the Entity Relationship Diagram
