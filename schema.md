@@ -113,7 +113,7 @@ erDiagram
     
 ```
 
-## Interpreting the Entity Relationship Diagram
+## Interpreting the Schema
 
 1. Entities: Each table in the database is represented as an entity (box) in the diagram. For example, LOCATIONS, MEMBERS, STAFF, and EQUIPMENT are all entities in our FitTrack Pro schema.
 2. Attributes: The attributes (columns) of each entity are listed within the entity box. The data type of each attribute is also specified. For instance, the MEMBERS entity has attributes like member_id, first_name, last_name, email, etc.
