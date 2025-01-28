@@ -5,7 +5,6 @@
 .mode column
 
 -- Enable foreign key support
-PRAGMA foreign_keys = ON;
 
 -- Create your tables here
 -- Example:
@@ -31,4 +30,4 @@ PRAGMA foreign_keys = ON;
 -- 13. equipment_maintenance_log
 
 -- After creating the tables, you can import the sample data using:
--- .read data/sample_data.sql
+-- `.read data/sample_data.sql` in a sql file or `npm run import` in the terminal

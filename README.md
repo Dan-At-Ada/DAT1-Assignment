@@ -14,7 +14,7 @@ FitTrack Pro is a comprehensive database management system designed for our chai
 - Create SQL commands to setup the database tables
 - Import precursor data into database
 - Write SQL queries to retrieve and manipulate data according to the business requirements
-- Test the SQL queries using sqlite3
+- Test the SQL queries
 
 ## ⚙️ Check your installation
 
@@ -42,145 +42,173 @@ Create the following tables in your database. We have provided a file `schema.sq
 
 #### `locations` table
 
-- `location_id`:
-- `name`:
-- `address`:
-- `phone_number`: 
-- `email`:
-- `opening_hours`:
+| Attribute     |
+| ------------- |
+| location_id   |
+| name          |
+| address       |
+| phone_number  |
+| email         |
+| opening_hours |
 
 
 #### `members` table
 
-- `member_id`:
-- `first_name`: 
-- `last_name`: 
-- `email`: 
-- `phone_number`:
-- `date_of_birth`:
-- `join_date`:
-- `emergency_contact_name`:
-- `emergency_contact_phone`:
+| Attribute               |
+| ----------------------- |
+| member_id               |
+| first_name              |
+| last_name               |
+| email                   |
+| phone_number            |
+| date_of_birth           |
+| join_date               |
+| emergency_contact_name  |
+| emergency_contact_phone |
 
 
 #### `staff` table
 
-- `staff_id`:
-- `first_name`:
-- `last_name`:
-- `email`:
-- `phone_number`:
-- `position`:
-- `hire_date`:
-- `location_id`:
+| Attribute    |      |
+| ------------ | ---- |
+| staff_id     |
+| first_name   |
+| last_name    |
+| email        |
+| phone_number |
+| position     | Trainer, Manager, Receptionist |
+| hire_date    |
+| location_id  |
 
 
 #### `equipment` table
 
-- `equipment_id`:
-- `name`:
-- `type`:
-- `purchase_date`: 
-- `last_maintenance_date`:
-- `next_maintenance_date`:
-- `location_id`:
+| Attribute             |      |
+| --------------------- | ---- |
+| equipment_id          |
+| name                  |
+| type                  | Cardio, Strength |
+| purchase_date         |
+| last_maintenance_date |
+| next_maintenance_date |
+| location_id           |
 
 
 #### `classes` table
 
-- `class_id`:
-- `name`: 
-- `description`: 
-- `capacity`:
-- `duration`:
-- `location_id`:
+| Attribute   |
+| ----------- |
+| class_id    |
+| name        |
+| description |
+| capacity    |
+| duration    |
+| location_id |
 
 
 #### `class_schedule` table
 
-- `schedule_id`:
-- `class_id`:
-- `staff_id`:
-- `start_time`:
-- `end_time`:
+| Attribute   |
+| ----------- |
+| schedule_id |
+| class_id    |
+| staff_id    |
+| start_time  |
+| end_time    |
 
 
 #### `memberships` table
 
-- `membership_id`:
-- `member_id`:
-- `type`:
-- `start_date`:
-- `end_date`:
-- `status`: 'Active', 'Expired', 'Cancelled', 'Frozen'
+| Attribute     |      |
+| ------------- | ---- |
+| membership_id |
+| member_id     |
+| type          |
+| start_date    |
+| end_date      |
+| status        | Active, Inactive |
 
 
 #### `attendance` table
 
-- `attendance_id`:
-- `member_id`:
-- `location_id`:
-- `check_in_time`:
-- `check_out_time`:
+| Attribute      |
+| -------------- |
+| attendance_id  |
+| member_id      |
+| location_id    |
+| check_in_time  |
+| check_out_time |
 
 
 #### `class_attendance` table
 
-- `class_attendance_id`:
-- `schedule_id`:
-- `member_id`:
-- `attendance_status`:
+| Attribute           |      |
+| ------------------- | ---- |
+| class_attendance_id |
+| schedule_id         |
+| member_id           |
+| attendance_status   | Registered, Attended, Unattended |
 
 
 #### `payments` table
 
-- `payment_id`:
-- `member_id`:
-- `amount`:
-- `payment_date`: 
-- `payment_method`:
-- `description`:
+| Attribute      |      |
+| -------------- | ---- |
+| payment_id     |
+| member_id      |
+| amount         |
+| payment_date   |
+| payment_method | Credit Card, Bank Transfer, PayPal |
+| payment_type   | Monthly membership fee, Day pass |
 
 
 #### `personal_training_sessions` table
 
-- `session_id`:
-- `member_id`:
-- `staff_id`:
-- `session_date`:
-- `start_time`: 
-- `end_time`: 
-- `notes`: 
+| Attribute    |
+| ------------ |
+| session_id   |
+| member_id    |
+| staff_id     |
+| session_date |
+| start_time   |
+| end_time     |
+| notes        |
 
 
 #### `member_health_metrics` table
 
-- `metric_id`: 
-- `member_id`: 
-- `measurement_date`: 
-- `weight`:
-- `body_fat_percentage`: 
-- `muscle_mass`: 
-- `bmi`: 
+| Attribute           |
+| ------------------- |
+| metric_id           |
+| member_id           |
+| measurement_date    |
+| weight              |
+| body_fat_percentage |
+| muscle_mass         |
+| bmi                 |
 
 
 #### `equipment_maintenance_log` table
 
-- `log_id`:
-- `equipment_id`:
-- `maintenance_date`:
-- `description`:
-- `performed_by`: THIS SHOULD BE STAFF
+| Attribute        |
+| ---------------- |
+| log_id           |
+| equipment_id     |
+| maintenance_date |
+| description      |
+| staff_id         |
 
-Once you've created your tables, you'll need to insert some users and todos into your database to check that your tables are defined correctly.
+Once you've created your tables, you'll need to run this and create some data to add into your database to check that your tables are defined correctly.
 
 ### Database Import
 
-The team has provided us with some initial data alongside creating our own data entries to help test the new database, when the schema is ready they have setup a script to import this new data over.
+The team has provided us with some initial data alongside creating our own data entries to help test the new database, when the schema is ready they have setup a script to import this new data over, this should be done on a blank database (tables only, no data)
 
 ```shell
 npm run import
 ```
+
+You can then add any other test inserts as you like
 
 ## Task Outline
 Use this as a checklist to keep track of your progress.
@@ -275,7 +303,7 @@ member_id | first_name | last_name | email | join_date | membership_type
 | Task                                          | Details                    |
 | --------------------------------------------- | -------------------------- |
 | Find member with the most class registrations |                            |
-| Output                                        | A result set with columns: |
+| Output                                        | A single row with columns: |
 
 ```plaintext
 member_id | first_name | last_name | registration_count
@@ -288,7 +316,7 @@ member_id | first_name | last_name | registration_count
 | Task                                           | Details                    |
 | ---------------------------------------------- | -------------------------- |
 | Find member with the least class registrations |                            |
-| Output                                         | A result set with columns: |
+| Output                                         | A single row with columns: |
 
 ```plaintext
 member_id | first_name | last_name | registration_count
@@ -431,7 +459,7 @@ class_id | name | start_time | end_time | available_spots
 
 | Task                                                                               | Details                                                 |
 | ---------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Register member with ID 11 for the HIIT Workout class (class_id 2) on '2023-03-20' |                                                         |
+| Register member with ID 11 for the HIIT Workout class (class_id 2) on '2025-02-20' |                                                         |
 | Output                                                                             | No result set. Affects 1 row in class_attendance table. |
 
 
@@ -628,24 +656,21 @@ session_id | member_name | session_date | start_time | end_time
 
 To run any `.sql` file with `sqlite3`, you can:
 
-1. Change into the directory where the file is located.
-2. Double check your `.sql` file opens a database using the `.open` statement.
-3. Open a terminal and use the `sqlite3` command-line tool:
-   ```terminal
-   sqlite3 < <name-of-file>.sql
+1. Ensure your `.sql` file opens a database using the `.open` statement.
+2. Open a terminal and use the `sqlite3` command-line tool from the root directory:
+   ```sh
+   sqlite3 <name-of-database>.db < <path-to-file>.sql
    ```
-4. Check the query output when you run the command
+3. Check the query output when you run the command.
 
-For example, to run the file `setup.sql` located in `part-1`. You can:
+For example, to run the file `schema.sql` located in the `src` directory, you can:
 
-1. Change directory into the `part-1` directory
-2. Open a terminal and run the following command:
+1. Open a terminal and run the following command from the root directory:
 
-```terminal
-  sqlite3 < setup.sql
+```sh
+sqlite3 fittrackpro.db < src/schema.sql
 ```
-
-3. Check the query output when you run the command
+2. Check the query output when you run the command
 
 
 ## 📝 Additional Notes
