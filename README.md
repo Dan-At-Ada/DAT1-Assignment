@@ -170,7 +170,7 @@ Create the following tables in your database. We have provided a file `schema.sq
 - `equipment_id`:
 - `maintenance_date`:
 - `description`:
-- `performed_by`: staff
+- `performed_by`: THIS SHOULD BE STAFF
 
 Once you've created your tables, you'll need to insert some users and todos into your database to check that your tables are defined correctly.
 
