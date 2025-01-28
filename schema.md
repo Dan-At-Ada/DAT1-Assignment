@@ -109,8 +109,6 @@ erDiagram
         string description
         int performed_by FK
     }
-
-    
 ```
 
 ## Interpreting the Schema
