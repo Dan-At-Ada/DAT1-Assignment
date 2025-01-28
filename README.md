@@ -182,246 +182,396 @@ The team has provided us with some initial data alongside creating our own data 
 npm run import
 ```
 
-### User Management (user_management.sql)
+## Task Outline
+Use this as a checklist to keep track of your progress.
 
-1. Retrieve all members
+#### 1. User Management (user_management.sql)
+1. [ ] 1.1 Retrieve all members
+2. [ ] 1.2 Update a member's contact information
+3. [ ] 1.3 Count total number of members
+4. [ ] 1.4  Find member with the most class registrations
+5. [ ] 1.5 Find member with the least class registrations
+6. [ ] 1.6 Calculate the percentage of members who have attended at least one class
 
-- Output: A result set with columns:
+#### 2. Payment Management (payment_management.sql)
+1. [ ] 2.1 Record a payment for a membership
+2. [ ] 2.2 Calculate total revenue from membership fees for each month of the current year
+3. [ ] 2.3 Find all day pass purchases
+
+#### 3. Equipment Management (equipment_management.sql)
+1. [ ] 3.1 Find equipment due for maintenance
+2. [ ] 3.2 Record equipment usage
+3. [ ] 3.3 Count equipment types in stock
+4. [ ] 3.4 Calculate average age of equipment by type (in days)
+
+#### 4. Class Scheduling (class_scheduling.sql)
+1. [ ] 4.1 List all classes with their instructors
+2. [ ] 4.2 Find available classes for a specific date
+3. [ ] 4.3 Register a member for a class
+4. [ ] 4.4 Cancel a class registration
+5. [ ] 4.5 List top 5 most popular classes
+6. [ ] 4.6 Calculate average number of classes per member
+
+#### 5. Membership Management (membership_management.sql)
+1. [ ] 5.1 List all active memberships
+2. [ ] 5.2 Calculate the average duration of gym visits for each membership type
+3. [ ] 5.3 Identify members with expiring memberships
+
+#### 6. Attendance Tracking (attendance_tracking.sql)
+1. [ ] 6.1 Record a member's gym visit
+2. [ ] 6.2 Retrieve a member's attendance history
+3. [ ] 6.3 Find the busiest day of the week based on gym visits
+4. [ ] 6.4 Calculate the average daily attendance for each location
+
+#### 7. Staff Management (staff_management.sql)
+1. [ ] 7.1 List all staff members by role
+2. [ ] 7.2 Find trainers with more than 5 personal training sessions in the last 30 days
+3. [ ] 7.3 Calculate the total hours worked by each staff member in the current month
+
+#### 8. Personal Training (personal_training.sql)
+1. [ ] 8.1 List all personal training sessions for a specific trainer
+
+## Task Details
+
+### 1. User Management (user_management.sql)
+
+------
+------
+#### 1.1. Retrieve all members
+
+| Task                 | Details                    |
+| -------------------- | -------------------------- |
+| Retrieve all members |                            |
+| Output               | A result set with columns: |
 
 ```plaintext
 member_id | first_name | last_name | email | join_date | membership_type
 ```
 
-2. Update a member's contact information
+------
+------
+#### 1.2. Update a member's contact information
 
-- Task: Update the phone number and email for member with ID 5
-- New phone number: '555-9876'
-- New email: '[emily.jones.updated@email.com](mailto:emily.jones.updated@email.com)'
-- Output: No result set. Affects 1 row.
+| Task                                                   | Details                                                               |
+| ------------------------------------------------------ | --------------------------------------------------------------------- |
+| Update the phone number and email for member with ID 5 |                                                                       |
+| New phone number                                       | '555-9876'                                                            |
+| New email                                              | [emily.jones.updated@email.com](mailto:emily.jones.updated@email.com) |
+| Output                                                 | No result set. Affects 1 row.                                         |
 
-1. Count total number of members
+------
+------
+#### 1.3. Count total number of members
 
-- Output: A single value representing the total number of members.
+| Task                          | Details                                                  |
+| ----------------------------- | -------------------------------------------------------- |
+| Count total number of members |                                                          |
+| Output                        | A single value representing the total number of members. |
 
-4. Find member with the most class registrations
+------
+------
+#### 1.4. Find member with the most class registrations
 
-- Output: A result set with columns:
+| Task                                          | Details                    |
+| --------------------------------------------- | -------------------------- |
+| Find member with the most class registrations |                            |
+| Output                                        | A result set with columns: |
 
 ```plaintext
 member_id | first_name | last_name | registration_count
 ```
 
-5. Find member with the least class registrations
+------
+------
+#### 1.5. Find member with the least class registrations
 
-- Output: A result set with columns:
+| Task                                           | Details                    |
+| ---------------------------------------------- | -------------------------- |
+| Find member with the least class registrations |                            |
+| Output                                         | A result set with columns: |
 
 ```plaintext
 member_id | first_name | last_name | registration_count
 ```
 
-6. Calculate the percentage of members who have attended at least one class
+------
+------
+#### 1.6. Calculate the percentage of members who have attended at least one class
 
-- Output: A single value representing the percentage.
+| Task                                                                     | Details                                     |
+| ------------------------------------------------------------------------ | ------------------------------------------- |
+| Calculate the percentage of members who have attended at least one class |                                             |
+| Output                                                                   | A single value representing the percentage. |
 
-### Payment Management (payment_management.sql)
 
-1. Record a payment for a membership
+### 2. Payment Management (payment_management.sql)
 
-- Task: Insert a new payment record for member with ID 11
-- Amount: $50.00
-- Payment date: Current date and time
-- Payment method: 'Credit Card'
-- Description: 'Monthly membership fee'
-- Output: No result set. Affects 1 row.
+------
+------
+#### 2.1. Record a payment for a membership
 
-1. Calculate total revenue from membership fees for each month of the current year
+| Task                                              | Details                       |
+| ------------------------------------------------- | ----------------------------- |
+| Insert a new payment record for member with ID 11 |                               |
+| Amount                                            | $50.00                        |
+| Payment date                                      | Current date and time         |
+| Payment method                                    | 'Credit Card'                 |
+| Description                                       | 'Monthly membership fee'      |
+| Output                                            | No result set. Affects 1 row. |
 
-- Output: A result set with columns:
+------
+------
+#### 2.2. Calculate total revenue from membership fees for each month of the current year
 
-```plaintext
-month | total_revenue
-```
+| Task                                                                            | Details                    |
+| ------------------------------------------------------------------------------- | -------------------------- |
+| Calculate total revenue from membership fees for each month of the current year |                            |
+| Output                                                                          | A result set with columns: |
+ ```plaintext           
+ month | total_revenue  
+ ```                    
 
-3. Find all day pass purchases
+------
+------
+#### 2.3. Find all day pass purchases
 
-1. Output: A result set with columns:
+| Task                        | Details                    |
+| --------------------------- | -------------------------- |
+| Find all day pass purchases |                            |
+| Output                      | A result set with columns: |
+ ```plaintext 
+ payment_id | amount | payment_date | payment_method |
+ ```          
 
-```plaintext
-payment_id | amount | payment_date | payment_method
-```
+### 3. Equipment Management (equipment_management.sql)
 
-### Equipment Management (equipment_management.sql)
+------
+------
+#### 3.1. Find equipment due for maintenance
 
-1. Find equipment due for maintenance
-
-1. Task: List all equipment with next_maintenance_date on or before the current date
-2. Output: A result set with columns:
+| Task                                                                        | Details                    |
+| --------------------------------------------------------------------------- | -------------------------- |
+| List all equipment with next_maintenance_date on or before the current date |                            |
+| Output                                                                      | A result set with columns: |
 
 ```plaintext
 equipment_id | name | next_maintenance_date
 ```
 
-2. Record equipment usage
+------
+------
+#### 3.2. Record equipment usage
 
-- Task: Insert a new record for Treadmill 1 (equipment_id 1) usage
-- Usage duration: 45 minutes
-- Usage date: Current date
-- Member ID: 3
-- Output: No result set. Affects 1 row.
+| Task                                    | Details                       |
+| --------------------------------------- | ----------------------------- |
+| Insert a new record for equipment usage |                               |
+| Equipment ID                            | 1                             |
+| Usage duration                          | 45 minutes                    |
+| Usage date                              | Current date                  |
+| Member ID                               | 3                             |
+| Output                                  | No result set. Affects 1 row. |
 
-3. Count equipment types in stock
+------
+------
+#### 3.3. Count equipment types in stock
 
-- Output: A result set with columns:
+| Task                                         | Details                    |
+| -------------------------------------------- | -------------------------- |
+| Count the number of equipment types in stock |                            |
+| Output                                       | A result set with columns: |
 
 ```plaintext
 equipment_type | count
 ```
 
-4. Calculate average age of equipment by type (in days)
+------
+------
+#### 3.4. Calculate average age of equipment by type (in days)
 
-- Output: A result set with columns:
+| Task                                                     | Details                    |
+| -------------------------------------------------------- | -------------------------- |
+| Calculate the average age of equipment by type (in days) |                            |
+| Output                                                   | A result set with columns: |
 
 ```plaintext
 equipment_type | avg_age_days
 ```
 
-### Class Scheduling (class_scheduling.sql)
+### 4. Class Scheduling (class_scheduling.sql)
 
-1. List all classes with their instructors
+------
+------
+#### 4.1. List all classes with their instructors
 
-- Output: A result set with columns:
+| Task                                    | Details                    |
+| --------------------------------------- | -------------------------- |
+| List all classes with their instructors |                            |
+| Output                                  | A result set with columns: |
 
 ```plaintext
 class_id | class_name | instructor_name
 ```
 
-2. Find available classes for a specific date
+------
+------
+#### 4.2. Find available classes for a specific date
 
-- Task: List classes available on '2023-03-15'
-- Output: A result set with columns:
+| Task                                   | Details                    |
+| -------------------------------------- | -------------------------- |
+| List classes available on '2023-03-15' |                            |
+| Output                                 | A result set with columns: |
 
 ```plaintext
 class_id | name | start_time | end_time | available_spots
 ```
 
-3. Register a member for a class
+------
+------
+#### 4.3. Register a member for a class
 
-- Task: Register member with ID 11 for the HIIT Workout class (class_id 2) on '2023-03-20'
-- Output: No result set. Affects 1 row in class_attendance table.
-
-
-4. Cancel a class registration
-
-- Task: Cancel the registration for member with ID 3 from the Yoga Basics class (class_id 1) on '2023-03-01'
-- Output: No result set. Affects 1 row in class_attendance table.
--
+| Task                                                                               | Details                                                 |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| Register member with ID 11 for the HIIT Workout class (class_id 2) on '2023-03-20' |                                                         |
+| Output                                                                             | No result set. Affects 1 row in class_attendance table. |
 
 
-5. List top 5 most popular classes
+------
+------
+#### 4.4. Cancel a class registration
 
-- Output: A result set with columns:
+| Task                                                                                                 | Details                                                 |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| Cancel the registration for member with ID 3 from the Yoga Basics class (class_id 1) on '2023-03-01' |                                                         |
+| Output                                                                                               | No result set. Affects 1 row in class_attendance table. |
+
+------
+------
+#### 4.5. List top 5 most popular classes
+
+| Task                                                      | Details                    |
+| --------------------------------------------------------- | -------------------------- |
+| List the top 5 most popular classes by registration count |                            |
+| Output                                                    | A result set with columns: |
 
 ```plaintext
 class_id | class_name | registration_count
 ```
 
 
+------
+------
+#### 4.6. Calculate average number of classes per member
+
+| Task                                               | Details                                                               |
+| -------------------------------------------------- | --------------------------------------------------------------------- |
+| Calculate the average number of classes per member |                                                                       |
+| Output                                             | A single value representing the average number of classes per member. |
 
 
+### 5. Membership Management (membership_management.sql)
 
-1. Calculate average number of classes per member
-- Output: A single value representing the average number of classes per member.
+------
+------
+#### 5.1. List all active memberships
 
-
-
-
-
-### Membership Management (membership_management.sql)
-
-1. List all active memberships
-- Output: A result set with columns:
+| Task                        | Details                    |
+| --------------------------- | -------------------------- |
+| List all active memberships |                            |
+| Output                      | A result set with columns: |
 
 ```plaintext
 member_id | first_name | last_name | membership_type | join_date
 ```
 
+------
+------
+#### 5.2. Calculate the average duration of gym visits for each membership type
 
-
-
-
-2. Calculate the average duration of gym visits for each membership type
-
-- Output: A result set with columns:
+| Task                                                                  | Details                    |
+| --------------------------------------------------------------------- | -------------------------- |
+| Calculate the average duration of gym visits for each membership type |                            |
+| Output                                                                | A result set with columns: |
 
 ```plaintext
 membership_type | avg_visit_duration_minutes
 ```
 
+------
+------
+#### 5.3. Identify members with expiring memberships
 
-
-
-
-3. Identify members with expiring memberships
-
-- Task: List members whose memberships will expire within the next 30 days
-- Output: A result set with columns:
+| Task                                                               | Details                    |
+| ------------------------------------------------------------------ | -------------------------- |
+| List members whose memberships will expire within the next 30 days |                            |
+| Output                                                             | A result set with columns: |
 
 ```plaintext
 member_id | first_name | last_name | email | end_date
 ```
 
-### Attendance Tracking (attendance_tracking.sql)
+### 6. Attendance Tracking (attendance_tracking.sql)
 
-1. Record a member's gym visit
+------
+------
+#### 6.1. Record a member's gym visit
 
-- Task: Insert a new attendance record for member with ID 7
-- Location: Downtown Fitness (location_id 1)
-- Check-in time: Current date and time
-- Output: No result set. Affects 1 row in attendance table.
+| Task                                                                    | Details                                           |
+| ----------------------------------------------------------------------- | ------------------------------------------------- |
+| Insert a new attendance record for member with ID 7 at Downtown Fitness |                                                   |
+| Location                                                                | Downtown Fitness (location_id 1)                  |
+| Check-in time                                                           | Current date and time                             |
+| Output                                                                  | No result set. Affects 1 row in attendance table. |
 
 
+------
+------
+#### 6.2. Retrieve a member's attendance history
 
-2. Retrieve a member's attendance history
-
-- Task: Get attendance history for member with ID 5
-- Output: A result set with columns:
+| Task                                        | Details                    |
+| ------------------------------------------- | -------------------------- |
+| Get attendance history for member with ID 5 |                            |
+| Output                                      | A result set with columns: |
 
 ```plaintext
 visit_date | check_in_time | check_out_time
 ```
 
+------
+------
+#### 6.3. Find the busiest day of the week based on gym visits
 
-
-
-
-3. Find the busiest day of the week based on gym visits
-- Output: A result set with columns:
+| Task                                                     | Details                    |
+| -------------------------------------------------------- | -------------------------- |
+| Identify the busiest day of the week based on gym visits |                            |
+| Output                                                   | A result set with columns: |
 
 ```plaintext
 day_of_week | visit_count
 ```
 
+------
+------
+#### 6.4. Calculate the average daily attendance for each location
 
-
-
-
-4. Calculate the average daily attendance for each location
-- Output: A result set with columns:
+| Task                                                     | Details                    |
+| -------------------------------------------------------- | -------------------------- |
+| Calculate the average daily attendance for each location |                            |
+| Output                                                   | A result set with columns: |
 
 ```plaintext
 location_name | avg_daily_attendance
 ```
 
+------
+------
+### 7. Staff Management (staff_management.sql)
 
+#### 7.1. List all staff members by role
 
-
-
-
-
-### Staff Management (staff_management.sql)
-
-1. List all staff members by role
-- Output: A result set with columns:
+| Task                           | Details                    |
+| ------------------------------ | -------------------------- |
+| List all staff members by role |                            |
+| Output                         | A result set with columns: |
 
 ```plaintext
 staff_id | first_name | last_name | role
@@ -431,31 +581,45 @@ staff_id | first_name | last_name | role
 
 
 
-2. Find trainers with more than 5 personal training sessions in the last 30 days
-- Output: A result set with columns:
+------
+------
+#### 7.2. Find trainers with more than 5 personal training sessions in the last 30 days
+
+| Task                                                                 | Details                    |
+| -------------------------------------------------------------------- | -------------------------- |
+| Find trainers with more than 5 personal training sessions in 30 days |                            |
+| Output                                                               | A result set with columns: |
 
 ```plaintext
 trainer_id | trainer_name | session_count
 ```
 
+------
+------
+#### 7.3. Calculate the total hours worked by each staff member in the current month
 
-
-
-
-3. Calculate the total hours worked by each staff member in the current month
-- Output: A result set with columns:
+| Task                                                               | Details                    |
+| ------------------------------------------------------------------ | -------------------------- |
+| Calculate the total hours worked by each staff member in the month |                            |
+| Output                                                             | A result set with columns: |
 
 ```plaintext
 staff_id | staff_name | total_hours_worked
 ```
 
-### Personal Training (personal_training.sql)
+### 8. Personal Training (personal_training.sql)
+------
+------
+#### 8.1. List all personal training sessions for specific trainer "Ivy Irwin"
+| Task                                                                 | Details                    |
+| -------------------------------------------------------------------- | -------------------------- |
+| List all personal training sessions for specific trainer "Ivy Irwin" |                            |
+| Output                                                               | A result set with columns: |
 
-1. List all personal training sessions for specific trainer "Ivy Irwin"
-- Output: A result set with columns:
-   ```
-   session_id | member_name | session_date | start_time | end_time
-   ```
+```plaintext
+session_id | member_name | session_date | start_time | end_time
+```
+
 ## 🔍 Checking your SQL queries
 
 `sqlite3` has a CLI (command line interface) which we can use to interact with our Sqlite databases. You can check your SQL queries by running your `.sql` files with the `sqlite3` CLI.
