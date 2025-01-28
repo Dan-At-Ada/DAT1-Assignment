@@ -2,7 +2,7 @@
 
 This README will guide you through the assignment for the Fittrack Pro business
 
-## Assignmnet Overview
+## Assignment Overview
 
 This assignment consists for one part broken into multiple steps
 
@@ -42,135 +42,135 @@ Create the following tables in your database. We have provided a file `schema.sq
 
 #### `locations` table
 
-- `location_id`: INTEGER, Primary Key
-- `name`: TEXT, NOT NULL
-- `address`: TEXT, NOT NULL
-- `phone_number`: TEXT
-- `email`: TEXT
-- `opening_hours`: TEXT
+- `location_id`:
+- `name`:
+- `address`:
+- `phone_number`: 
+- `email`:
+- `opening_hours`:
 
 
 #### `members` table
 
-- `member_id`: INTEGER, Primary Key
-- `first_name`: TEXT, NOT NULL
-- `last_name`: TEXT, NOT NULL
-- `email`: TEXT, UNIQUE, NOT NULL
-- `phone_number`: TEXT
-- `date_of_birth`: DATE
-- `join_date`: DATE, DEFAULT CURRENT_DATE
-- `emergency_contact_name`: TEXT
-- `emergency_contact_phone`: TEXT
+- `member_id`:
+- `first_name`: 
+- `last_name`: 
+- `email`: 
+- `phone_number`:
+- `date_of_birth`:
+- `join_date`:
+- `emergency_contact_name`:
+- `emergency_contact_phone`:
 
 
 #### `staff` table
 
-- `staff_id`: INTEGER, Primary Key
-- `first_name`: TEXT, NOT NULL
-- `last_name`: TEXT, NOT NULL
-- `email`: TEXT, UNIQUE, NOT NULL
-- `phone_number`: TEXT
-- `position`: TEXT, NOT NULL
-- `hire_date`: DATE, DEFAULT CURRENT_DATE
-- `location_id`: INTEGER, Foreign Key referencing locations(location_id)
+- `staff_id`:
+- `first_name`:
+- `last_name`:
+- `email`:
+- `phone_number`:
+- `position`:
+- `hire_date`:
+- `location_id`:
 
 
 #### `equipment` table
 
-- `equipment_id`: INTEGER, Primary Key
-- `name`: TEXT, NOT NULL
-- `type`: TEXT, NOT NULL
-- `purchase_date`: DATE
-- `last_maintenance_date`: DATE
-- `next_maintenance_date`: DATE
-- `location_id`: INTEGER, Foreign Key referencing locations(location_id)
+- `equipment_id`:
+- `name`:
+- `type`:
+- `purchase_date`: 
+- `last_maintenance_date`:
+- `next_maintenance_date`:
+- `location_id`:
 
 
 #### `classes` table
 
-- `class_id`: INTEGER, Primary Key
-- `name`: TEXT, NOT NULL
-- `description`: TEXT
-- `capacity`: INTEGER, NOT NULL
-- `duration`: INTEGER, NOT NULL
-- `location_id`: INTEGER, Foreign Key referencing locations(location_id)
+- `class_id`:
+- `name`: 
+- `description`: 
+- `capacity`:
+- `duration`:
+- `location_id`:
 
 
 #### `class_schedule` table
 
-- `schedule_id`: INTEGER, Primary Key
-- `class_id`: INTEGER, Foreign Key referencing classes(class_id)
-- `staff_id`: INTEGER, Foreign Key referencing staff(staff_id)
-- `start_time`: DATETIME, NOT NULL
-- `end_time`: DATETIME, NOT NULL
+- `schedule_id`:
+- `class_id`:
+- `staff_id`:
+- `start_time`:
+- `end_time`:
 
 
 #### `memberships` table
 
-- `membership_id`: INTEGER, Primary Key
-- `member_id`: INTEGER, Foreign Key referencing members(member_id)
-- `type`: TEXT, NOT NULL
-- `start_date`: DATE, NOT NULL
-- `end_date`: DATE
-- `status`: TEXT, CHECK(status IN ('Active', 'Expired', 'Cancelled', 'Frozen'))
+- `membership_id`:
+- `member_id`:
+- `type`:
+- `start_date`:
+- `end_date`:
+- `status`: 'Active', 'Expired', 'Cancelled', 'Frozen'
 
 
 #### `attendance` table
 
-- `attendance_id`: INTEGER, Primary Key
-- `member_id`: INTEGER, Foreign Key referencing members(member_id)
-- `location_id`: INTEGER, Foreign Key referencing locations(location_id)
-- `check_in_time`: DATETIME, DEFAULT CURRENT_TIMESTAMP
-- `check_out_time`: DATETIME
+- `attendance_id`:
+- `member_id`:
+- `location_id`:
+- `check_in_time`:
+- `check_out_time`:
 
 
 #### `class_attendance` table
 
-- `class_attendance_id`: INTEGER, Primary Key
-- `schedule_id`: INTEGER, Foreign Key referencing class_schedule(schedule_id)
-- `member_id`: INTEGER, Foreign Key referencing members(member_id)
-- `attendance_status`: TEXT, CHECK(attendance_status IN ('Attended', 'No Show', 'Cancelled'))
+- `class_attendance_id`:
+- `schedule_id`:
+- `member_id`:
+- `attendance_status`:
 
 
 #### `payments` table
 
-- `payment_id`: INTEGER, Primary Key
-- `member_id`: INTEGER, Foreign Key referencing members(member_id)
-- `amount`: DECIMAL(10, 2), NOT NULL
-- `payment_date`: DATETIME, DEFAULT CURRENT_TIMESTAMP
-- `payment_method`: TEXT
-- `description`: TEXT
+- `payment_id`:
+- `member_id`:
+- `amount`:
+- `payment_date`: 
+- `payment_method`:
+- `description`:
 
 
 #### `personal_training_sessions` table
 
-- `session_id`: INTEGER, Primary Key
-- `member_id`: INTEGER, Foreign Key referencing members(member_id)
-- `staff_id`: INTEGER, Foreign Key referencing staff(staff_id)
-- `session_date`: DATE, NOT NULL
-- `start_time`: TIME, NOT NULL
-- `end_time`: TIME, NOT NULL
-- `notes`: TEXT
+- `session_id`:
+- `member_id`:
+- `staff_id`:
+- `session_date`:
+- `start_time`: 
+- `end_time`: 
+- `notes`: 
 
 
 #### `member_health_metrics` table
 
-- `metric_id`: INTEGER, Primary Key
-- `member_id`: INTEGER, Foreign Key referencing members(member_id)
-- `measurement_date`: DATE, DEFAULT CURRENT_DATE
-- `weight`: DECIMAL(5, 2)
-- `body_fat_percentage`: DECIMAL(4, 2)
-- `muscle_mass`: DECIMAL(5, 2)
-- `bmi`: DECIMAL(4, 2)
+- `metric_id`: 
+- `member_id`: 
+- `measurement_date`: 
+- `weight`:
+- `body_fat_percentage`: 
+- `muscle_mass`: 
+- `bmi`: 
 
 
 #### `equipment_maintenance_log` table
 
-- `log_id`: INTEGER, Primary Key
-- `equipment_id`: INTEGER, Foreign Key referencing equipment(equipment_id)
-- `maintenance_date`: DATE, NOT NULL
-- `description`: TEXT
-- `performed_by`: INTEGER, Foreign Key referencing staff(staff_id)
+- `log_id`:
+- `equipment_id`:
+- `maintenance_date`:
+- `description`:
+- `performed_by`: staff
 
 Once you've created your tables, you'll need to insert some users and todos into your database to check that your tables are defined correctly.
 
