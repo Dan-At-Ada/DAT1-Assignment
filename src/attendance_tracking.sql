@@ -14,3 +14,6 @@
 
 -- 3. Find the busiest day of the week based on gym visits
 -- TODO: Write a query to find the busiest day of the week based on gym visits
+
+-- 4. Calculate the average daily attendance for each location
+-- TODO: Write a query to calculate the average daily attendance for each location

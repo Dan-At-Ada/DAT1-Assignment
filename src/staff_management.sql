@@ -9,5 +9,5 @@
 -- 1. List all staff members by role
 -- TODO: Write a query to list all staff members by role
 
--- 2. Find trainers with more than 5 personal training sessions in the last 30 days
--- TODO: Write a query to find trainers with more than 5 personal training sessions in the last 30 days
+-- 2. Find trainers with one or more personal training session in the next 30 days
+-- TODO: Write a query to find trainers with one or more personal training session in the next 30 days
