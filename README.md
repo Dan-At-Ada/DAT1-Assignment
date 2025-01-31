@@ -158,7 +158,7 @@ Create the following tables in your database. We have provided a file `schema.sq
 | member_id      |
 | amount         |
 | payment_date   |
-| payment_method | Credit Card, Bank Transfer, PayPal |
+| payment_method | Credit Card, Bank Transfer, PayPal, Cash |
 | payment_type   | Monthly membership fee, Day pass |
 
 
@@ -223,27 +223,26 @@ Use this as a checklist to keep track of your progress.
 
 #### 2. Payment Management (payment_management.sql)
 1. [ ] 2.1 Record a payment for a membership
-2. [ ] 2.2 Calculate total revenue from membership fees for each month of the current year
+2. [ ] 2.2 Calculate total revenue from membership fees for each month of the last year
 3. [ ] 2.3 Find all day pass purchases
 
 #### 3. Equipment Management (equipment_management.sql)
-1. [ ] 3.1 Find equipment due for maintenance
-2. [ ] 3.2 Record equipment usage
-3. [ ] 3.3 Count equipment types in stock
-4. [ ] 3.4 Calculate average age of equipment by type (in days)
+1. [ ] 3.1 Find equipment due for maintenance in the next 30 days
+2. [ ] 3.2 Count equipment types in stock
+3. [ ] 3.3 Calculate average age of equipment by type (in days)
 
 #### 4. Class Scheduling (class_scheduling.sql)
 1. [ ] 4.1 List all classes with their instructors
 2. [ ] 4.2 Find available classes for a specific date
 3. [ ] 4.3 Register a member for a class
 4. [ ] 4.4 Cancel a class registration
-5. [ ] 4.5 List top 5 most popular classes
+5. [ ] 4.5 List top 3 most popular classes
 6. [ ] 4.6 Calculate average number of classes per member
 
 #### 5. Membership Management (membership_management.sql)
 1. [ ] 5.1 List all active memberships
 2. [ ] 5.2 Calculate the average duration of gym visits for each membership type
-3. [ ] 5.3 Identify members with expiring memberships
+3. [ ] 5.3 Identify members with expiring memberships this year
 
 #### 6. Attendance Tracking (attendance_tracking.sql)
 1. [ ] 6.1 Record a member's gym visit
@@ -253,8 +252,7 @@ Use this as a checklist to keep track of your progress.
 
 #### 7. Staff Management (staff_management.sql)
 1. [ ] 7.1 List all staff members by role
-2. [ ] 7.2 Find trainers with more than 5 personal training sessions in the last 30 days
-3. [ ] 7.3 Calculate the total hours worked by each staff member in the current month
+2. [ ] 7.2 Find trainers with one or more personal training session in the next 30 days
 
 #### 8. Personal Training (personal_training.sql)
 1. [ ] 8.1 List all personal training sessions for a specific trainer
@@ -273,7 +271,7 @@ Use this as a checklist to keep track of your progress.
 | Output               | A result set with columns: |
 
 ```plaintext
-member_id | first_name | last_name | email | join_date | membership_type
+member_id | first_name | last_name | email | join_date
 ```
 
 ------
@@ -344,16 +342,16 @@ member_id | first_name | last_name | registration_count
 | Amount                                            | $50.00                        |
 | Payment date                                      | Current date and time         |
 | Payment method                                    | 'Credit Card'                 |
-| Description                                       | 'Monthly membership fee'      |
+| Payment type                                      | 'Monthly membership fee'      |
 | Output                                            | No result set. Affects 1 row. |
 
 ------
 ------
-#### 2.2. Calculate total revenue from membership fees for each month of the current year
+#### 2.2. Calculate total revenue from membership fees for each month of the last year
 
 | Task                                                                            | Details                    |
 | ------------------------------------------------------------------------------- | -------------------------- |
-| Calculate total revenue from membership fees for each month of the current year |                            |
+| Calculate total revenue from membership fees for each month of the last year    |                            |
 | Output                                                                          | A result set with columns: |
  ```plaintext           
  month | total_revenue  
@@ -375,11 +373,11 @@ member_id | first_name | last_name | registration_count
 
 ------
 ------
-#### 3.1. Find equipment due for maintenance
+#### 3.1. Find equipment due for maintenance in the next 30 days
 
 | Task                                                                        | Details                    |
 | --------------------------------------------------------------------------- | -------------------------- |
-| List all equipment with next_maintenance_date on or before the current date |                            |
+| List all equipment with next_maintenance_date in the next 30 days |                            |
 | Output                                                                      | A result set with columns: |
 
 ```plaintext
@@ -388,20 +386,7 @@ equipment_id | name | next_maintenance_date
 
 ------
 ------
-#### 3.2. Record equipment usage
-
-| Task                                    | Details                       |
-| --------------------------------------- | ----------------------------- |
-| Insert a new record for equipment usage |                               |
-| Equipment ID                            | 1                             |
-| Usage duration                          | 45 minutes                    |
-| Usage date                              | Current date                  |
-| Member ID                               | 3                             |
-| Output                                  | No result set. Affects 1 row. |
-
-------
-------
-#### 3.3. Count equipment types in stock
+#### 3.2. Count equipment types in stock
 
 | Task                                         | Details                    |
 | -------------------------------------------- | -------------------------- |
@@ -414,7 +399,7 @@ equipment_type | count
 
 ------
 ------
-#### 3.4. Calculate average age of equipment by type (in days)
+#### 3.3. Calculate average age of equipment by type (in days)
 
 | Task                                                     | Details                    |
 | -------------------------------------------------------- | -------------------------- |
@@ -446,7 +431,7 @@ class_id | class_name | instructor_name
 
 | Task                                   | Details                    |
 | -------------------------------------- | -------------------------- |
-| List classes available on '2023-03-15' |                            |
+| List classes available on '2025-02-01' |                            |
 | Output                                 | A result set with columns: |
 
 ```plaintext
@@ -459,7 +444,7 @@ class_id | name | start_time | end_time | available_spots
 
 | Task                                                                               | Details                                                 |
 | ---------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Register member with ID 11 for the HIIT Workout class (class_id 2) on '2025-02-20' |                                                         |
+| Register member with ID 11 for the Spin Class (class_id 3) on '2025-02-01' |                                                         |
 | Output                                                                             | No result set. Affects 1 row in class_attendance table. |
 
 
@@ -469,16 +454,16 @@ class_id | name | start_time | end_time | available_spots
 
 | Task                                                                                                 | Details                                                 |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Cancel the registration for member with ID 3 from the Yoga Basics class (class_id 1) on '2023-03-01' |                                                         |
+| Cancel the registration for member with ID 2 from the Scheduled Yoga Basics class (schedule_id 7)  |                                                         |
 | Output                                                                                               | No result set. Affects 1 row in class_attendance table. |
 
 ------
 ------
-#### 4.5. List top 5 most popular classes
+#### 4.5. List top 3 most popular classes
 
 | Task                                                      | Details                    |
 | --------------------------------------------------------- | -------------------------- |
-| List the top 5 most popular classes by registration count |                            |
+| List the top 3 most popular classes by registration count |                            |
 | Output                                                    | A result set with columns: |
 
 ```plaintext
@@ -500,7 +485,7 @@ class_id | class_name | registration_count
 
 ------
 ------
-#### 5.1. List all active memberships
+#### 5.1. List all active memberships with member details
 
 | Task                        | Details                    |
 | --------------------------- | -------------------------- |
@@ -526,11 +511,11 @@ membership_type | avg_visit_duration_minutes
 
 ------
 ------
-#### 5.3. Identify members with expiring memberships
+#### 5.3. Identify members with expiring memberships this year
 
 | Task                                                               | Details                    |
 | ------------------------------------------------------------------ | -------------------------- |
-| List members whose memberships will expire within the next 30 days |                            |
+| List members whose memberships will expire within the next year |                            |
 | Output                                                             | A result set with columns: |
 
 ```plaintext
@@ -605,35 +590,20 @@ location_name | avg_daily_attendance
 staff_id | first_name | last_name | role
 ```
 
-
-
-
-
 ------
 ------
-#### 7.2. Find trainers with more than 5 personal training sessions in the last 30 days
+#### 7.2 Find trainers with one or more personal training session in the next 30 days
 
 | Task                                                                 | Details                    |
 | -------------------------------------------------------------------- | -------------------------- |
-| Find trainers with more than 5 personal training sessions in 30 days |                            |
+|  Find trainers with one or more personal training session in the next 30 days |
+|                            |
 | Output                                                               | A result set with columns: |
 
 ```plaintext
 trainer_id | trainer_name | session_count
 ```
 
-------
-------
-#### 7.3. Calculate the total hours worked by each staff member in the current month
-
-| Task                                                               | Details                    |
-| ------------------------------------------------------------------ | -------------------------- |
-| Calculate the total hours worked by each staff member in the month |                            |
-| Output                                                             | A result set with columns: |
-
-```plaintext
-staff_id | staff_name | total_hours_worked
-```
 
 ### 8. Personal Training (personal_training.sql)
 ------
@@ -676,3 +646,4 @@ sqlite3 fittrackpro.db < src/schema.sql
 ## 📝 Additional Notes
 
 Happy coding and testing!
+
