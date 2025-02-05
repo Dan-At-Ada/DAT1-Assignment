@@ -39,111 +39,113 @@ You will focus on writing SQL queries to set up the database tables, insert samp
 ### Database Schema
 
 Create the following tables in your database. We have provided a file `schema.sql` inside the `src` folder where you can create tables and insert data using SQL.
+Foreign Keys are commonly at the bottom of each set of table's attributes, use these to work out relations.
+Some attributes will show example values or example acceptable values for reference, you can further see some data in `scripts/sample_data.sql`
 
 #### `locations` table
 
-| Attribute     |
-| ------------- |
-| location_id   |
-| name          |
-| address       |
-| phone_number  |
-| email         |
-| opening_hours |
+| Attribute     | Format / Example        |
+| ------------- | ----------------------- |
+| location_id   |                         |
+| name          |                         |
+| address       |                         |
+| phone_number  | 07868 574632            |
+| email         | "email@domain.com"      |
+| opening_hours | "hh:mm-hh:mm"           |
 
 
 #### `members` table
 
-| Attribute               |
-| ----------------------- |
-| member_id               |
-| first_name              |
-| last_name               |
-| email                   |
-| phone_number            |
-| date_of_birth           |
-| join_date               |
-| emergency_contact_name  |
-| emergency_contact_phone |
+| Attribute               | Format / Example        |
+| ----------------------- | ----------------------- |
+| member_id               |                         |
+| first_name              |                         |
+| last_name               |                         |
+| email                   | "email@domain.com"      |
+| phone_number            | 07868 574632            |
+| date_of_birth           | yyyy-mm-dd              |
+| join_date               | yyyy-mm-dd              |
+| emergency_contact_name  | 07868 574632            |
+| emergency_contact_phone | 07868 574632            |
 
 
 #### `staff` table
 
-| Attribute    |      |
-| ------------ | ---- |
+| Attribute    | Format / Example                              |
+| ------------ | --------------------------------------------- |
 | staff_id     |
 | first_name   |
 | last_name    |
-| email        |
-| phone_number |
-| position     | Trainer, Manager, Receptionist, Maintenance |
-| hire_date    |
+| email        | "email@domain.com"                            |
+| phone_number | 07868 574632                                  |
+| position     | Trainer, Manager, Receptionist, Maintenance   |
+| hire_date    | yyyy-mm-dd                                    |
 | location_id  |
 
 
 #### `equipment` table
 
-| Attribute             |      |
-| --------------------- | ---- |
+| Attribute             | Format / Example   |
+| --------------------- | ------------------ |
 | equipment_id          |
 | name                  |
-| type                  | Cardio, Strength |
-| purchase_date         |
-| last_maintenance_date |
-| next_maintenance_date |
+| type                  | Cardio, Strength   |
+| purchase_date         | yyyy-mm-dd         |
+| last_maintenance_date | yyyy-mm-dd         |
+| next_maintenance_date | yyyy-mm-dd         |
 | location_id           |
 
 
 #### `classes` table
 
-| Attribute   |
-| ----------- |
+| Attribute   | Format / Example   |
+| ----------- | ------------------ |
 | class_id    |
 | name        |
 | description |
-| capacity    |
-| duration    |
+| capacity    | 30                 |
+| duration    | 20                 |
 | location_id |
 
 
 #### `class_schedule` table
 
-| Attribute   |
-| ----------- |
+| Attribute   | Format / Example       |
+| ----------- | ---------------------- |
 | schedule_id |
 | class_id    |
 | staff_id    |
-| start_time  |
-| end_time    |
+| start_time  | "yyyy-mm-dd hh:mm:ss"  |
+| end_time    | "yyyy-mm-dd hh:mm:ss"  |
 
 
 #### `memberships` table
 
-| Attribute     |      |
-| ------------- | ---- |
+| Attribute     | Format / Example  |
+| ------------- | ----------------- |
 | membership_id |
 | member_id     |
 | type          |
-| start_date    |
-| end_date      |
-| status        | Active, Inactive |
+| start_date    | "yyyy-mm-dd"      |
+| end_date      | "yyyy-mm-dd"      |
+| status        | Active, Inactive  |
 
 
 #### `attendance` table
 
-| Attribute      |
-| -------------- |
+| Attribute      | Format / Example    |
+| -------------- | -----------------   |
 | attendance_id  |
 | member_id      |
 | location_id    |
-| check_in_time  |
-| check_out_time |
+| check_in_time  | yyyy-mm-dd hh:mm:ss |
+| check_out_time | yyyy-mm-dd hh:mm:ss |
 
 
 #### `class_attendance` table
 
-| Attribute           |      |
-| ------------------- | ---- |
+| Attribute           | Format / Example  |
+| ------------------- | ----------------- |
 | class_attendance_id |
 | schedule_id         |
 | member_id           |
@@ -152,49 +154,49 @@ Create the following tables in your database. We have provided a file `schema.sq
 
 #### `payments` table
 
-| Attribute      |      |
-| -------------- | ---- |
+| Attribute      | Format / Example  |
+| -------------- | ----------------- |
 | payment_id     |
 | member_id      |
-| amount         |
-| payment_date   |
+| amount         | 20.00                              |
+| payment_date   | yyyy-mm-dd hh:mm:ss                |
 | payment_method | Credit Card, Bank Transfer, PayPal |
-| payment_type   | Monthly membership fee, Day pass |
+| payment_type   | Monthly membership fee, Day pass   |
 
 
 #### `personal_training_sessions` table
 
-| Attribute    |
-| ------------ |
+| Attribute    | Format / Example  |
+| ------------ | ----------------- |
 | session_id   |
 | member_id    |
 | staff_id     |
-| session_date |
-| start_time   |
-| end_time     |
+| session_date | yyyy-mm-dd         |
+| start_time   | hh:mm:ss           |
+| end_time     | hh:mm:ss           |
 | notes        |
 
 
 #### `member_health_metrics` table
 
-| Attribute           |
-| ------------------- |
+| Attribute           | Format / Example  |
+| ------------------- | ----------------- |
 | metric_id           |
 | member_id           |
-| measurement_date    |
-| weight              |
-| body_fat_percentage |
-| muscle_mass         |
-| bmi                 |
+| measurement_date    | yyyy-mm-dd        |
+| weight              | 64.5              |
+| body_fat_percentage | 20.0              |
+| muscle_mass         | 50.0              |
+| bmi                 | 23.5              |
 
 
 #### `equipment_maintenance_log` table
 
-| Attribute        |
-| ---------------- |
+| Attribute        | Format / Example  |
+| ---------------- | ----------------- |
 | log_id           |
 | equipment_id     |
-| maintenance_date |
+| maintenance_date | yyyy-mm-dd        |
 | description      |
 | staff_id         |
 
@@ -282,7 +284,7 @@ member_id | first_name | last_name | email | join_date
 | ------------------------------------------------------ | --------------------------------------------------------------------- |
 | Update the phone number and email for member with ID 5 |                                                                       |
 | New phone number                                       | '555-9876'                                                            |
-| New email                                              | [emily.jones.updated@email.com](mailto:emily.jones.updated@email.com) |
+| New email                                              | [emily.jones.updated@email.com](mailto:emily.jones.updated@newemail.com) |
 | Output                                                 | No result set. Affects 1 row.                                         |
 
 ------
@@ -301,7 +303,7 @@ member_id | first_name | last_name | email | join_date
 | Task                                          | Details                    |
 | --------------------------------------------- | -------------------------- |
 | Find member with the most class registrations |                            |
-| Output                                        | A single row with columns: |
+| Output                                        | A result set with columns: |
 
 ```plaintext
 member_id | first_name | last_name | registration_count
@@ -314,7 +316,7 @@ member_id | first_name | last_name | registration_count
 | Task                                           | Details                    |
 | ---------------------------------------------- | -------------------------- |
 | Find member with the least class registrations |                            |
-| Output                                         | A single row with columns: |
+| Output                                         | A result set with columns: |
 
 ```plaintext
 member_id | first_name | last_name | registration_count
@@ -322,12 +324,12 @@ member_id | first_name | last_name | registration_count
 
 ------
 ------
-#### 1.6. Calculate the percentage of members who have attended at least one class
+#### 1.6. Calculate the percentage of members who have attended two or more classes
 
-| Task                                                                     | Details                                     |
-| ------------------------------------------------------------------------ | ------------------------------------------- |
-| Calculate the percentage of members who have attended at least one class |                                             |
-| Output                                                                   | A single value representing the percentage. |
+| Task                                                                        | Details                                     |
+| ------------------------------------------------------------------------    | ------------------------------------------- |
+| Calculate the percentage of members who have attended two or more classes   |                                             |
+| Output                                                                      | A single value representing the percentage. |
 
 
 ### 2. Payment Management (payment_management.sql)
@@ -349,10 +351,10 @@ member_id | first_name | last_name | registration_count
 ------
 #### 2.2. Calculate total revenue from membership fees for each month of the last year
 
-| Task                                                                            | Details                    |
-| ------------------------------------------------------------------------------- | -------------------------- |
-| Calculate total revenue from membership fees for each month of the last year    |                            |
-| Output                                                                          | A result set with columns: |
+| Task                                                                                                         | Details                    |
+| -------------------------------------------------------------------------------                              | -------------------------- |
+| Calculate total revenue from membership fees for each month of the 4 months (from November 2024 - Feb 2025)  |                            |
+| Output                                                                                                       | A result set with columns: |
  ```plaintext           
  month | total_revenue  
  ```                    
@@ -377,7 +379,7 @@ member_id | first_name | last_name | registration_count
 
 | Task                                                                        | Details                    |
 | --------------------------------------------------------------------------- | -------------------------- |
-| List all equipment with next_maintenance_date in the next 30 days |                            |
+| List all equipment with next_maintenance_date in the next 30 days           |                            |
 | Output                                                                      | A result set with columns: |
 
 ```plaintext
@@ -386,11 +388,11 @@ equipment_id | name | next_maintenance_date
 
 ------
 ------
-#### 3.2. Count equipment types in stock
+#### 3.2. Count equipment types in stock 
 
 | Task                                         | Details                    |
 | -------------------------------------------- | -------------------------- |
-| Count the number of equipment types in stock |                            |
+| Count the number of equipment types in stock | Cardio, Strength           |
 | Output                                       | A result set with columns: |
 
 ```plaintext
@@ -444,7 +446,7 @@ class_id | name | start_time | end_time | available_spots
 
 | Task                                                                               | Details                                                 |
 | ---------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Register member with ID 11 for the Spin Class (class_id 3) on '2025-02-01' |                                                         |
+| Register member with ID 11 for the Spin Class (class_id 1) on '2025-02-01' |                                                         |
 | Output                                                                             | No result set. Affects 1 row in class_attendance table. |
 
 
@@ -454,7 +456,7 @@ class_id | name | start_time | end_time | available_spots
 
 | Task                                                                                                 | Details                                                 |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Cancel the registration for member with ID 2 from the Scheduled Yoga Basics class (schedule_id 7)  |                                                         |
+| Cancel the registration for member with ID 3 from the Scheduled Yoga Basics class (schedule_id 7)    |                                                         |
 | Output                                                                                               | No result set. Affects 1 row in class_attendance table. |
 
 ------
@@ -463,7 +465,7 @@ class_id | name | start_time | end_time | available_spots
 
 | Task                                                      | Details                    |
 | --------------------------------------------------------- | -------------------------- |
-| List the top 3 most popular classes by registration count |                            |
+| List the top 3 most popular classes by registration count | "Registered" classes       |
 | Output                                                    | A result set with columns: |
 
 ```plaintext
@@ -477,7 +479,7 @@ class_id | class_name | registration_count
 
 | Task                                               | Details                                                               |
 | -------------------------------------------------- | --------------------------------------------------------------------- |
-| Calculate the average number of classes per member |                                                                       |
+| Calculate the average number of classes per member | include "Registered" or "Attended" member                             |
 | Output                                             | A single value representing the average number of classes per member. |
 
 
@@ -568,7 +570,7 @@ day_of_week | visit_count
 
 | Task                                                     | Details                    |
 | -------------------------------------------------------- | -------------------------- |
-| Calculate the average daily attendance for each location |                            |
+| Calculate the average daily attendance for each location | including "no show" days   |
 | Output                                                   | A result set with columns: |
 
 ```plaintext
@@ -579,12 +581,12 @@ location_name | avg_daily_attendance
 ------
 ### 7. Staff Management (staff_management.sql)
 
-#### 7.1. List all staff members by role
+#### 7.1. List all staff members by position
 
-| Task                           | Details                    |
-| ------------------------------ | -------------------------- |
-| List all staff members by role |                            |
-| Output                         | A result set with columns: |
+| Task                                 | Details                    |
+| ------------------------------       | -------------------------- |
+| List all staff members by position   |                            |
+| Output                               | A result set with columns: |
 
 ```plaintext
 staff_id | first_name | last_name | role

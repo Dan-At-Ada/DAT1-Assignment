@@ -15,11 +15,11 @@
 -- 3. Count total number of members
 -- TODO: Write a query to count the total number of members
 
--- 4. Find member with the most class registrations
+-- 4. Find member(s) with the most class registrations
 -- TODO: Write a query to find the member with the most class registrations
 
--- 5. Find member with the least class registrations
+-- 5. Find member(s) with the least class registrations
 -- TODO: Write a query to find the member with the least class registrations
 
--- 6. Calculate the percentage of members who have attended at least one class
--- TODO: Write a query to calculate the percentage of members who have attended at least one class
+-- 6. Calculate the percentage of members who have attended two or more classes
+-- TODO: Write a query to calculate the percentage of members who have attended two or more classes
