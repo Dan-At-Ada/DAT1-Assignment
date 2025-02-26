@@ -1,0 +1,180 @@
+
+===== Running user_management.sql =====
+
+member_id  first_name  last_name  email                          join_date 
+---------  ----------  ---------  -----------------------------  ----------
+1          Alice       Johnson    alice.j@email.com              2022-01-10
+2          Bob         Smith      bob.s@email.com                2022-03-05
+3          Carol       Williams   carol.w@email.com              2022-02-20
+4          David       Brown      david.b@email.com              2022-04-15
+5          Emily       Jones      emily.jones.updated@email.com  2022-05-01
+6          Frank       Miller     frank.m@email.com              2022-06-10
+7          Grace       Davis      grace.d@email.com              2022-07-20
+8          Henry       Wilson     henry.w@email.com              2022-08-15
+9          Ivy         Moore      ivy.m@email.com                2022-09-01
+10         Jack        Taylor     jack.t@email.com               2022-10-12
+11         Karen       Lee        karen.l@email.com              2022-11-05
+12         Liam        Anderson   liam.a@email.com               2022-12-01
+13         Mia         Thomas     mia.t@email.com                2023-01-10
+14         Noah        Roberts    noah.r@email.com               2023-02-15
+15         Olivia      Clark      olivia.c@email.com             2023-03-20
+total_members
+-------------
+15           
+member_id  first_name  last_name  registration_count
+---------  ----------  ---------  ------------------
+10         Jack        Taylor     1                 
+member_id  first_name  last_name  registration_count
+---------  ----------  ---------  ------------------
+1          Alice       Johnson    1                 
+percentage      
+----------------
+66.6666666666667
+
+
+
+
+===== Running payment_management.sql =====
+
+month    total_revenue
+-------  -------------
+2025-02  150.0        
+
+
+
+
+===== Running equipment_management.sql =====
+
+equipment_id  name               next_maintenance_date
+------------  -----------------  ---------------------
+1             Treadmill 1        2022-12-15           
+2             Treadmill 2        2022-12-20           
+3             Treadmill 3        2022-12-25           
+4             Treadmill 4        2022-12-30           
+5             Bench Press 1      2023-01-01           
+6             Bench Press 2      2023-01-05           
+7             Elliptical 1       2023-02-01           
+8             Elliptical 2       2023-02-05           
+9             Squat Rack 1       2023-03-01           
+10            Squat Rack 2       2023-03-05           
+11            Rowing Machine 1   2023-04-01           
+12            Rowing Machine 2   2023-04-05           
+13            Leg Press 1        2023-05-01           
+14            Leg Press 2        2023-05-05           
+15            Stationary Bike 1  2023-06-01           
+16            Stationary Bike 2  2023-06-05           
+type      count
+--------  -----
+Cardio    10   
+Strength  6    
+type      avg_age_days    
+--------  ----------------
+Cardio    1079.67978115752
+Strength  1061.01311449086
+
+
+
+
+===== Running class_scheduling.sql =====
+
+List all classes with their instructors
+class_id  class_name         instructor_name
+--------  -----------------  ---------------
+1         Yoga Basics        David Brown    
+2         HIIT Workout       Emma Davis     
+3         Spin Class         Ivy Irwin      
+4         Pilates            Grace Green    
+5         Zumba              Karen King     
+6         Strength Training  David Brown    
+Find available classes for a specific date
+Register a member for a class
+Cancel a class registration
+List top 3 most popular classes
+class_id  class_name    registration_count
+--------  ------------  ------------------
+4         Pilates       2                 
+3         Spin Class    2                 
+2         HIIT Workout  2                 
+Calculate average number of classes per member
+avg_classes_per_member
+----------------------
+1.0                   
+
+
+
+
+===== Running membership_management.sql =====
+
+member_id  first_name  last_name  membership_type  join_date 
+---------  ----------  ---------  ---------------  ----------
+1          Alice       Johnson    Premium          2022-01-10
+2          Bob         Smith      Basic            2022-03-05
+3          Carol       Williams   Premium          2022-02-20
+4          David       Brown      Basic            2022-04-15
+5          Emily       Jones      Premium          2022-05-01
+6          Frank       Miller     Basic            2022-06-10
+7          Grace       Davis      Premium          2022-07-20
+8          Henry       Wilson     Basic            2022-08-15
+9          Ivy         Moore      Premium          2022-09-01
+10         Jack        Taylor     Basic            2022-10-12
+11         Karen       Lee        Premium          2022-11-05
+12         Liam        Anderson   Basic            2022-12-01
+13         Mia         Thomas     Premium          2023-01-10
+14         Noah        Roberts    Basic            2023-02-15
+15         Olivia      Clark      Premium          2023-03-20
+membership_type  avg_visit_duration_minutes
+---------------  --------------------------
+Basic            84.000000089407           
+Premium          90.0                      
+
+
+
+
+===== Running attendance_tracking.sql =====
+
+Retrieve a member's attendance history
+check_in_time        check_out_time     
+-------------------  -------------------
+2023-03-05 16:00:00  2023-03-05 17:45:00
+day_of_week  visit_count
+-----------  -----------
+2            4          
+5            2          
+4            2          
+3            2          
+6            1          
+1            1          
+0            1          
+location_name     avg_daily_attendance
+----------------  --------------------
+Downtown Fitness  1.33333333333333    
+Suburb Gym        1.0                 
+
+
+
+
+===== Running staff_management.sql =====
+
+staff_id  first_name  last_name  role        
+--------  ----------  ---------  ------------
+5         Henry       Harris     Maintenance 
+2         Emma        Davis      Manager     
+7         Jack        Johnson    Manager     
+3         Frank       Evans      Receptionist
+1         David       Brown      Trainer     
+4         Grace       Green      Trainer     
+6         Ivy         Irwin      Trainer     
+8         Karen       King       Trainer     
+
+
+
+
+===== Running personal_training.sql =====
+
+session_id  member_name     session_date  start_time  end_time
+----------  --------------  ------------  ----------  --------
+3           Carol Williams  2023-03-07    09:00:00    10:00:00
+7           Grace Davis     2023-03-11    13:00:00    14:00:00
+
+
+
